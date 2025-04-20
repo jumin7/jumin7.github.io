@@ -1,0 +1,320 @@
+:root {
+    --primary-color: #2d3436;
+    --secondary-color: #8B4513;
+    --accent-color: #8B4513;
+    --background-color: #FAF9F6;
+    --text-color: #2d3436;
+    --light-gray: #f5f6fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Landing Page Styles */
+#landing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+}
+
+/* Navigation Styles */
+.main-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+    justify-content: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--accent-color);
+}
+
+.lotus-logo {
+    width: 40px;
+    height: 40px;
+    color: var(--accent-color);
+    margin: 4rem auto 2rem;
+}
+
+.lotus-logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.animated-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    display: inline-block;
+    line-height: 1.2;
+}
+
+.hello {
+    color: var(--text-color);
+    font-style: italic;
+    margin-right: 0.2em;
+}
+
+.intro {
+    color: var(--accent-color);
+    margin: 0 0.2em;
+}
+
+.name {
+    color: var(--accent-color);
+    display: inline-block;
+    letter-spacing: 0.1em;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: revealLetter 0.5s forwards;
+}
+
+.letter:nth-child(1) { animation-delay: 0.1s; }
+.letter:nth-child(2) { animation-delay: 0.2s; }
+.letter:nth-child(3) { animation-delay: 0.3s; }
+.letter:nth-child(4) { animation-delay: 0.4s; }
+.letter:nth-child(5) { animation-delay: 0.5s; }
+.letter:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes revealLetter {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.name-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--accent-color);
+    animation: drawUnderline 1s ease-out forwards 0.5s;
+    transform-origin: left;
+}
+
+@keyframes drawUnderline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.exclamation {
+    color: var(--accent-color);
+    margin-left: 2px;
+}
+
+.circle-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 120%;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.circle-animation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    clip-path: inset(0 100% 0 0);
+    animation: drawCircle 1s ease-out forwards 0.5s;
+}
+
+@keyframes drawCircle {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.hero-description {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-top: 1rem;
+    max-width: 800px;
+}
+
+/* About Section Styles */
+#about {
+    min-height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    padding: 4rem 2rem;
+    align-items: flex-start;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-weight: normal;
+}
+
+.about-text .education {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.about-text .description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    position: relative;
+}
+
+.about-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Page Content Styles */
+.page-content {
+    padding: 8rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .animated-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.2rem;
+    }
+    
+    .main-nav ul {
+        gap: 2rem;
+    }
+    
+    .main-nav a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 2rem;
+    }
+
+    .about-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+} 
