@@ -10,21 +10,144 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section id="projects-page">
-        <nav class="page-nav">
-            <a href="index.html" class="home-link">JS</a>
-            <ul>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="index.html#about">About Me</a></li>
-                <li><a href="interests.html">Interests</a></li>
-            </ul>
-        </nav>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="index.html#about">About Me</a></li>
+            <li><a href="interests.html">Interests</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-content">
+        <h1>Projects<span class="description">A showcase of my work and contributions</span></h1>
         
-        <div class="page-content">
-            <h1>Projects</h1>
-            <!-- Add your projects content here -->
+        <div class="projects-grid">
+            <div class="project-card" data-project="todo-app">
+                <div class="project-image">
+                    <img src="images/todo-app-1.png" alt="Todo Application Screenshot">
+                    <div class="view-gallery">Click to view gallery</div>
+                </div>
+                <div class="project-info">
+                    <h2>Task Management System</h2>
+                    <p class="project-tech">• Flask(Python) • React.JS • SQLite • CSS </p>
+                    <p class="project-description">A modern, minimalist task management web application that helps users organize and track their tasks efficiently.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/project2.png" alt="Project 2 Screenshot">
+                </div>
+                <div class="project-info">
+                    <h2>Project Name</h2>
+                    <p class="project-tech">Flask(Python) • ReactJS • MySQL</p>
+                    <p class="project-description">A brief description of the project and what it accomplishes. Highlight the key features and technologies used.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="images/project3.png" alt="Project 3 Screenshot">
+                </div>
+                <div class="project-info">
+                    <h2>Project Name</h2>
+                    <p class="project-tech">JavaScript • HTML • CSS</p>
+                    <p class="project-description">A brief description of the project and what it accomplishes. Highlight the key features and technologies used.</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Modal Gallery -->
+    <div class="modal-gallery" id="gallery-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Interactive Todo Application</h2>
+            
+            <div class="gallery-container">
+                <button class="gallery-nav prev">&lt;</button>
+                <div class="gallery-image">
+                    <img src="images/todo-app-1.png" alt="Todo App Screenshot 1">
+                </div>
+                <button class="gallery-nav next">&gt;</button>
+            </div>
+            
+            <div class="gallery-thumbnails">
+                <img src="images/todo-app-1.png" alt="Thumbnail 1" class="thumbnail active">
+                <img src="images/todo-app-2.png" alt="Thumbnail 2" class="thumbnail">
+                <img src="images/todo-app-3.png" alt="Thumbnail 3" class="thumbnail">
+                <img src="images/todo-app-4.png" alt="Thumbnail 4" class="thumbnail">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery functionality
+        const modal = document.getElementById('gallery-modal');
+        const projectCards = document.querySelectorAll('.project-card');
+        const closeBtn = document.querySelector('.close-modal');
+        const prevBtn = document.querySelector('.gallery-nav.prev');
+        const nextBtn = document.querySelector('.gallery-nav.next');
+        const mainImage = document.querySelector('.gallery-image img');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        
+        let currentImageIndex = 0;
+        const images = [
+            'images/todo-app-1.png',
+            'images/todo-app-2.png',
+            'images/todo-app-3.png',
+            'images/todo-app-4.png'
+        ];
+
+        // Open modal when project card is clicked
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                currentImageIndex = 0;
+                updateGalleryImage();
+            });
+        });
+
+        // Close modal when X is clicked
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Navigate through images
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateGalleryImage();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateGalleryImage();
+        });
+
+        // Thumbnail clicks
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                currentImageIndex = index;
+                updateGalleryImage();
+            });
+        });
+
+        function updateGalleryImage() {
+            mainImage.src = images[currentImageIndex];
+            thumbnails.forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentImageIndex);
+            });
+        }
+    </script>
 </body>
 </html> 
