@@ -20,8 +20,169 @@
     </nav>
 
     <div class="page-content">
-        <h1>Interests</h1>
-        <!-- Add your interests content here -->
+        <h1>Interests<span class="description">A glimpse into my passions and involvements</span></h1>
+        
+        <div class="projects-grid">
+            <div class="project-card" data-interest="graphic-design">
+                <div class="project-image">
+                    <img src="images/graphic-design-1.png" alt="Graphic Design Work">
+                    <div class="view-gallery">Click to view gallery</div>
+                </div>
+                <div class="project-info">
+                    <h2>Logo Designs </h2>
+                    <p class="project-tech">• Graphic Design • Canva • Visual Communication</p>
+                    <p class="project-description">A collection of my logo designs and visual identity work, showcasing my creative approach to branding and design.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-interest="techtango">
+                <div class="project-image">
+                    <img src="images/techtango-1.png" alt="TechTango Wireframe">
+                    <div class="view-gallery">Click to view gallery (6 images)</div>
+                </div>
+                <div class="project-info">
+                    <h2>TechTango</h2>
+                    <p class="project-tech">• Wireframing • UI/UX Design • Process Documentation</p>
+                    <p class="project-description">A comprehensive wireframe project showcasing the design process from inspiration board to final screens, highlighting the evolution of the TechTango interface.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-interest="club-president">
+                <div class="project-image">
+                    <img src="images/club-president-1.jpg" alt="Club President Role">
+                    <div class="view-gallery">Click to view gallery</div>
+                </div>
+                <div class="project-info">
+                    <h2>Club President</h2>
+                    <p class="project-tech">• Leadership • Event Planning • Team Management</p>
+                    <p class="project-description">Being the President for Marist International Students Associatiion for 2 consecutive yearshas been a great learning experience. I gained valuable experience in leadership, event planning, public relations, and team management. It has been an honor to host programs and guide the community and club.</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Modal Gallery -->
+    <div class="modal-gallery" id="gallery-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Gallery</h2>
+            
+            <div class="gallery-container">
+                <button class="gallery-nav prev">&lt;</button>
+                <div class="gallery-image">
+                    <img src="" alt="Gallery Image">
+                </div>
+                <button class="gallery-nav next">&gt;</button>
+            </div>
+            
+            <div class="gallery-thumbnails">
+                <!-- Thumbnails will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery functionality
+        const modal = document.getElementById('gallery-modal');
+        const projectCards = document.querySelectorAll('.project-card');
+        const closeBtn = document.querySelector('.close-modal');
+        const prevBtn = document.querySelector('.gallery-nav.prev');
+        const nextBtn = document.querySelector('.gallery-nav.next');
+        const mainImage = document.querySelector('.gallery-image img');
+        const thumbnailsContainer = document.querySelector('.gallery-thumbnails');
+        const modalTitle = document.querySelector('.modal-title');
+        
+        // Define image sets for each interest
+        const imageSets = {
+            'graphic-design': {
+                title: 'Graphic Design Portfolio',
+                images: [
+                    'images/graphic-design-1.png',
+                    'images/graphic-design-2.png',
+                    'images/graphic-design-3.png',
+                    'images/graphic-design-4.png'
+                ]
+            },
+            'techtango': {
+                title: 'TechTango Wireframe Process',
+                images: [
+                    'images/techtango-1.png',
+                    'images/techtango-2.png',
+                    'images/techtango-3.png',
+                    'images/techtango-4.png',
+                    'images/techtango-5.png',
+                    'images/techtango-6.png'
+                ]
+            },
+            'club-president': {
+                title: 'Club President Experience',
+                images: [
+                    'images/club-president-1.jpg',
+                    'images/club-president-2.jpg',
+                    'images/club-president-3.jpg',
+                    'images/club-president-4.png',
+                    'images/club-president-5.jpg'
+                ]
+            }
+        };
+
+        let currentImageSet = null;
+        let currentImageIndex = 0;
+
+        // Open modal when project card is clicked
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const interest = card.dataset.interest;
+                currentImageSet = imageSets[interest];
+                modalTitle.textContent = currentImageSet.title;
+                currentImageIndex = 0;
+                updateGallery();
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Close modal when X is clicked
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Navigate through images
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + currentImageSet.images.length) % currentImageSet.images.length;
+            updateGallery();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % currentImageSet.images.length;
+            updateGallery();
+        });
+
+        function updateGallery() {
+            if (!currentImageSet) return;
+            
+            mainImage.src = currentImageSet.images[currentImageIndex];
+            
+            // Update thumbnails
+            thumbnailsContainer.innerHTML = '';
+            currentImageSet.images.forEach((image, index) => {
+                const thumbnail = document.createElement('img');
+                thumbnail.src = image;
+                thumbnail.alt = `Thumbnail ${index + 1}`;
+                thumbnail.className = `thumbnail ${index === currentImageIndex ? 'active' : ''}`;
+                thumbnail.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    updateGallery();
+                });
+                thumbnailsContainer.appendChild(thumbnail);
+            });
+        }
+    </script>
 </body>
 </html> 
