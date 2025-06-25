@@ -12,9 +12,9 @@
 <body>
     <nav class="main-nav">
         <ul>
+            <li><a href="index.html#about">About Me</a></li>
             <li><a href="experience.html">Experience</a></li>
             <li><a href="projects.html" class="active">Projects</a></li>
-            <li><a href="index.html#about">About Me</a></li>
             <li><a href="interests.html">Interests</a></li>
         </ul>
     </nav>
@@ -25,7 +25,7 @@
         <div class="projects-grid">
             <div class="project-card" data-project="todo-app">
                 <div class="project-image">
-                    <img src="images/todo-app-1.png" alt="Todo Application Screenshot">
+                    <img src="images/DoorDone/todo-app-1.png" alt="Todo Application Screenshot">
                     <div class="view-gallery">Click to view gallery</div>
                 </div>
                 <div class="project-info">
@@ -38,23 +38,25 @@
 
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/project2.png" alt="Project 2 Screenshot">
+                    <img src="images/QuackCare/quackcare-1.png" alt="QuackCare Dashboard">
+                    <div class="view-gallery">Click to view gallery</div>
                 </div>
                 <div class="project-info">
-                    <h2>Project Name</h2>
-                    <p class="project-tech">Flask(Python) • ReactJS • MySQL</p>
-                    <p class="project-description">A brief description of the project and what it accomplishes. Highlight the key features and technologies used.</p>
+                    <h2>QuackCare - Mental Wellness App</h2>
+                    <p class="project-tech">• React • JavaScript • Firebase • AI APIs</p>
+                    <p class="project-description">An AI-powered chatbot focused on supporting mental wellness, equipped with practical tools and personalized resources to help users manage their emotional well-being.                    
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/project3.png" alt="Project 3 Screenshot">
+                    <img src="images/Landed/landed-1.png" alt="Landed Homepage">
+                    <div class="view-gallery">Click to view gallery</div>
                 </div>
                 <div class="project-info">
-                    <h2>Project Name</h2>
-                    <p class="project-tech">JavaScript • HTML • CSS</p>
-                    <p class="project-description">A brief description of the project and what it accomplishes. Highlight the key features and technologies used.</p>
+                    <h2>Landed - Job Application Aid</h2>
+                    <p class="project-tech"> • NodeJS • React • Postgres • Firebase </p>
+                    <p class="project-description">Landed is a web application designed to simplify as well as supercharge the job application process at the same time using the power of AI. </p>
                 </div>
             </div>
         </div>
@@ -64,22 +66,93 @@
     <div class="modal-gallery" id="gallery-modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2 class="modal-title">Interactive Todo Application</h2>
+            <h2 class="modal-title">Task Management Application</h2>
+            
+            <!-- Project Details Card -->
+            <div class="project-details-card">
+                <p class="project-details-text"><bold>Do or Done</bold> is a minimalist task management web application built around a simple premise: you either do your tasks or be done with them. Designed with a clean, intuitive interface, it presents all your tasks in a single, streamlined view to help you stay organized and focused on your deadlines. With no unnecessary features or distractions, Do or Done keeps you centered on what truly matters — getting things done.</p>
+            </div>
             
             <div class="gallery-container">
                 <button class="gallery-nav prev">&lt;</button>
                 <div class="gallery-image">
-                    <img src="images/todo-app-1.png" alt="Todo App Screenshot 1">
+                    <img src="images/Do-or-Done/todo-app-1.png" alt="Todo App Screenshot 1">
+                    <div class="gallery-caption">Main dashboard view showing the clean, minimalist interface of Do or Done</div>
                 </div>
                 <button class="gallery-nav next">&gt;</button>
             </div>
             
             <div class="gallery-thumbnails">
-                <img src="images/todo-app-1.png" alt="Thumbnail 1" class="thumbnail active">
-                <img src="images/todo-app-2.png" alt="Thumbnail 2" class="thumbnail">
-                <img src="images/todo-app-3.png" alt="Thumbnail 3" class="thumbnail">
-                <img src="images/todo-app-4.png" alt="Thumbnail 4" class="thumbnail">
+                <img src="images/DoorDone/todo-app-1.png" alt="Thumbnail 1" class="thumbnail active">
+                <img src="images/DoorDone/todo-app-2.png" alt="Thumbnail 2" class="thumbnail">
+                <img src="images/DoorDone/todo-app-3.png" alt="Thumbnail 3" class="thumbnail">
+                <img src="images/DoorDone/todo-app-4.png" alt="Thumbnail 4" class="thumbnail">
+                <img src="images/DoorDone/todo-app-5.png" alt="Thumbnail 5" class="thumbnail">
 
+            </div>
+        </div>
+    </div>
+
+    <!-- QuackCare Modal Gallery -->
+    <div class="modal-gallery" id="quackcare-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">QuackCare - Mental Wellness App</h2>
+            
+            <div class="project-details-card">
+                <p class="project-details-text"><bold>QuackCare</bold> is a mental wellness app designed to support users on their emotional well-being journey. Its primary feature is an AI-powered chatbot that listens, provides compassionate guidance, and can detect and report signs of extreme behavior or distress. Beyond the chatbot, QuackCare offers a range of supportive tools, including personalized affirmations, guided breathing exercises, and journaling prompts, as well as access to practical resources like nearby mental health professionals and national helpline numbers. Powered by Ollama and ChatGPT APIs, QuackCare blends advanced AI with evidence-based practices to promote a healthier mind.</p>
+                <br><br>You can check out <a href="http://quackcare.ecrl.marist.edu/" target="_blank" rel="noopener noreferrer"><u>QuackCare</u></a> here.
+
+            </div>
+            
+            <div class="gallery-container">
+                <button class="gallery-nav prev">&lt;</button>
+                <div class="gallery-image">
+                    <img src="images/QuackCare/quackcare-1.png" alt="QuackCare Dashboard">
+                    <div class="gallery-caption">Main dashboard showing patient overview and key metrics</div>
+                </div>
+                <button class="gallery-nav next">&gt;</button>
+            </div>
+            
+            <div class="gallery-thumbnails">
+                <img src="images/QuackCare/quackcare-1.png" alt="Dashboard" class="thumbnail active">
+                <img src="images/QuackCare/quackcare-2.png" alt="Page" class="thumbnail">
+                <img src="images/QuackCare/quackcare-3.png" alt="Page" class="thumbnail">
+                <img src="images/QuackCare/quackcare-4.png" alt="Page" class="thumbnail">
+                <img src="images/QuackCare/quackcare-5.png" alt="Page" class="thumbnail">
+                <img src="images/QuackCare/quackcare-6.png" alt="Page" class="thumbnail">
+                <img src="images/QuackCare/quackcare-7.png" alt="Page" class="thumbnail">
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Landed Modal Gallery -->
+    <div class="modal-gallery" id="landed-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Landed - Job Application Tool</h2>
+            
+            <div class="project-details-card">
+                <p class="project-details-text">Born out of my team partner and I's experiences navigating the job search process, Landed is a versatile, all-in-one platform built to support every stage of applying for a job. From crafting tailored resumes and cover letters to preparing for interviews with realistic practice questions, Landed empowers applicants with the tools they need to stand out. Designed to simplify and streamline the job application journey.</p>
+                <br><br>You can check out <a href="https://landed-41df2.web.app/" target="_blank" rel="noopener noreferrer"><u>Landed</u></a> here.
+            </div>
+            
+            <div class="gallery-container">
+                <button class="gallery-nav prev">&lt;</button>
+                <div class="gallery-image">
+                    <img src="images/Landed/landed-1.png" alt="Landed Homepage">
+                    <div class="gallery-caption">Homepage with animated introduction and project highlights</div>
+                </div>
+                <button class="gallery-nav next">&gt;</button>
+            </div>
+            
+            <div class="gallery-thumbnails">
+                <img src="images/Landed/landed-1.png" alt="Homepage" class="thumbnail active">
+                <img src="images/Landed/landed-2.png" alt="Projects Page" class="thumbnail">
+                <img src="images/Landed/landed-3.png" alt="About Section" class="thumbnail">
+                <img src="images/Landed/landed-4.png" alt="Contact Page" class="thumbnail">
+                <img src="images/Landed/landed-5.png" alt="Contact Page" class="thumbnail">
             </div>
         </div>
     </div>
@@ -87,67 +160,137 @@
     <script>
         // Gallery functionality
         const modal = document.getElementById('gallery-modal');
+        const quackcareModal = document.getElementById('quackcare-modal');
+        const landedModal = document.getElementById('landed-modal');
         const projectCards = document.querySelectorAll('.project-card');
-        const closeBtn = document.querySelector('.close-modal');
-        const prevBtn = document.querySelector('.gallery-nav.prev');
-        const nextBtn = document.querySelector('.gallery-nav.next');
-        const mainImage = document.querySelector('.gallery-image img');
-        const thumbnails = document.querySelectorAll('.thumbnail');
+        const closeBtns = document.querySelectorAll('.close-modal');
         
-        let currentImageIndex = 0;
-        const images = [
-            'images/todo-app-1.png',
-            'images/todo-app-2.png',
-            'images/todo-app-3.png',
-            'images/todo-app-4.png'
+        // Image arrays for each project
+        const doOrDoneImages = [
+            'images/DoorDone/todo-app-1.png',
+            'images/DoorDone/todo-app-2.png',
+            'images/DoorDone/todo-app-3.png',
+            'images/DoorDone/todo-app-4.png',
+            'images/DoorDone/todo-app-5.png'
+        ];
+        const doOrDoneCaptions = [
+            'Main dashboard view of Do or Done. An overview of all tasks sorted out by date create or deadline due.',
+            'Task creation interface with smart date recognition',
+            'Editing tasks to make any changes',
+            'Simply select and click ond elete to delete any tasks',
+            'View of all completed tasks'
         ];
 
-        // Open modal when project card is clicked
-        projectCards.forEach(card => {
-            card.addEventListener('click', () => {
-                modal.style.display = 'flex';
-                currentImageIndex = 0;
+        const quackCareImages = [
+            'images/QuackCare/quackcare-1.png',
+            'images/QuackCare/quackcare-2.png',
+            'images/QuackCare/quackcare-3.png',
+            'images/QuackCare/quackcare-4.png',
+            'images/QuackCare/quackcare-5.png',
+            'images/QuackCare/quackcare-6.png',
+            'images/QuackCare/quackcare-7.png'
+        ];
+        
+        const quackCareCaptions = [
+            'Inital Login / Signup Page',
+            'Main Chatbot Page. Can create different topics to chat with the AI',
+            'Journaling feature with wellness prompts for deeper writing sessions. Saved entries can be retrieved as well.',
+            'Exercises pages 3 wellness exercises to choose from.',
+            'Audio guides for meditations focussing on different techniques and lengths to be chosen from.',
+            'Professional resources page with contacts of mental health professionals.',
+            'Account setting page for any changes or to log out.'
+        ];
+
+        const landedImages = [
+            'images/Landed/landed-1.png',
+            'images/Landed/landed-2.png',
+            'images/Landed/landed-3.png',
+            'images/Landed/landed-4.png',
+            'images/Landed/landed-5.png'
+        ];
+
+        const landedCaptions = [
+            'Initial landing page *literally*',
+            'Home page with our three main features of the app.',
+            'AI Mock interview page equipped with AI voice reading, scoring and feedback.',
+            'AI Resume Generator based on shared job descriptions and if available a pre-exisitng resume',
+            'AI Cover Letter Generator based on shared job descriptiona and user inofrmation shared.',
+        ];
+
+        function initializeGallery(modalElement, images, captions) {
+            let currentImageIndex = 0;
+            const mainImage = modalElement.querySelector('.gallery-image img');
+            const mainCaption = modalElement.querySelector('.gallery-caption');
+            const thumbnails = modalElement.querySelectorAll('.thumbnail');
+            const prevBtn = modalElement.querySelector('.gallery-nav.prev');
+            const nextBtn = modalElement.querySelector('.gallery-nav.next');
+
+            function updateGalleryImage() {
+                mainImage.src = images[currentImageIndex];
+                mainCaption.textContent = captions[currentImageIndex];
+                thumbnails.forEach((thumb, index) => {
+                    thumb.classList.toggle('active', index === currentImageIndex);
+                });
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
                 updateGalleryImage();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateGalleryImage();
+            });
+
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    updateGalleryImage();
+                });
+            });
+
+            return updateGalleryImage;
+        }
+
+        // Initialize all galleries
+        const updateDoOrDone = initializeGallery(modal, doOrDoneImages, doOrDoneCaptions);
+        const updateQuackCare = initializeGallery(quackcareModal, quackCareImages, quackCareCaptions);
+        const updateLanded = initializeGallery(landedModal, landedImages, landedCaptions);
+
+        // Open modal when project card is clicked
+        projectCards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                if (index === 0) {
+                    modal.style.display = 'flex';
+                    updateDoOrDone();
+                } else if (index === 1) {
+                    quackcareModal.style.display = 'flex';
+                    updateQuackCare();
+                } else if (index === 2) {
+                    landedModal.style.display = 'flex';
+                    updateLanded();
+                }
             });
         });
 
-        // Close modal when X is clicked
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
+        // Close modals when X is clicked
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.style.display = 'none';
+                quackcareModal.style.display = 'none';
+                landedModal.style.display = 'none';
+            });
         });
 
         // Close modal when clicking outside
         window.addEventListener('click', (e) => {
-            if (e.target === modal) {
+            if (e.target === modal || e.target === quackcareModal || e.target === landedModal) {
                 modal.style.display = 'none';
+                quackcareModal.style.display = 'none';
+                landedModal.style.display = 'none';
             }
         });
-
-        // Navigate through images
-        prevBtn.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            updateGalleryImage();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            updateGalleryImage();
-        });
-
-        // Thumbnail clicks
-        thumbnails.forEach((thumbnail, index) => {
-            thumbnail.addEventListener('click', () => {
-                currentImageIndex = index;
-                updateGalleryImage();
-            });
-        });
-
-        function updateGalleryImage() {
-            mainImage.src = images[currentImageIndex];
-            thumbnails.forEach((thumb, index) => {
-                thumb.classList.toggle('active', index === currentImageIndex);
-            });
-        }
     </script>
 </body>
 </html> 

@@ -424,6 +424,16 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.project-info h2 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-info h2 a:hover {
+    color: var(--accent-color);
+}
+
 .project-tech {
     color: var(--accent-color);
     font-size: 0.9rem;
@@ -486,19 +496,35 @@ body {
 
 .gallery-image {
     width: 100%;
-    height: 400px;
+    height: 500px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: var(--light-gray);
     border-radius: 8px;
     overflow: hidden;
+    position: relative;
 }
 
 .gallery-image img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90%;
+    max-height: calc(100% - 60px);
     object-fit: contain;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: center;
+    z-index: 2;
 }
 
 .gallery-nav {
@@ -554,6 +580,20 @@ body {
 .thumbnail.active {
     opacity: 1;
     box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+/* Project Details inside Modal */
+.project-details-card {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem; /* space before gallery container */
+}
+
+.project-details-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
 }
 
 /* Responsive Styles */
