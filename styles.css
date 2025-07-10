@@ -608,13 +608,25 @@ body {
     }
     
     /* Global Navigation Mobile Styles */
-    .main-nav ul {
-        gap: 2rem;
+    .main-nav {
+        padding: 1rem;
     }
-    
+
+    .main-nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;            /* allow items to wrap to next line */
+        justify-content: center;     /* keep items centered */
+    }
+
+    .main-nav li {
+        flex: 1 1 40%;              /* two items per row */
+        text-align: center;
+    }
+
     .main-nav a {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.95rem;         /* slightly smaller font */
+        padding: 0.5rem 0.6rem;     /* adjust tap target */
+        display: inline-block;      /* ensure padding applies */
     }
 
     /* About Section Mobile Styles */
@@ -698,5 +710,25 @@ body {
     .thumbnail {
         width: 60px;
         height: 45px;
+    }
+
+    /* Project card text adjustments */
+    .project-info h2 {
+        font-size: 1.25rem;
+    }
+
+    .project-tech {
+        font-size: 0.8rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    /* Gallery caption on mobile */
+    .gallery-caption {
+        font-size: 0.8rem;
+        padding: 0.75rem;
     }
 } 
